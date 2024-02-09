@@ -7,7 +7,7 @@ import { Google } from '@mui/icons-material';
 import { AuthLayout } from '../layout/AuthLayout';
 
 import { useForm } from '../../hooks';
-import { startGoogleSignIn } from '../../store/auth';
+import {checkingCredentials, startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 
 
 export const LoginPage = () => {
@@ -27,6 +27,7 @@ export const LoginPage = () => {
 
     // console.log({ email, password })
     dispatch( startLoginWithEmailPassword({ email, password }) );
+    // dispatch(checkingCredentials())
   }
 
   const onGoogleSignIn = () => {
